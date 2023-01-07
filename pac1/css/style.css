@@ -1,10 +1,24 @@
+@font-face {
+    font-family: Inter;
+    src: url("../assets/fonts/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../assets/fonts/Inter-Bold.ttf");
+    font-weight: bold;
+}
+
 *{
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter;
 }
 
 body{
     margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo{
@@ -12,8 +26,13 @@ body{
     padding: 5px 10px;
 }
 
+h2{
+    text-align: center;
+    padding: 20px 0px;
+}
+
 .navMenu{
-    background-color: #000000;
+    background-color: #222222;
     height: 50px;
 }
 
@@ -56,15 +75,152 @@ body{
 }
 
 .headImg{
-    height: 225px;
+    height: 300px;
     width: 100%;
     object-fit:cover;
     object-position: 0% 40%;
 }
 
-h2{
+.categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 48px;
+    gap: 48px;
+}
+
+.filaCategoria{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    gap:99px;
+}
+.filaCategoria>p{
+    width: 60%;
+}
+
+#introPic{
+    background-image: url("../assets/img/foto_seccio_large.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 266px;
+    flex-grow: 2;
+}
+
+.filaCategoria.cardRow{
+    padding-left: 162;
+    justify-content: center;
+    gap: 48px;
+}
+
+.infoCard{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 24px;
+    gap:24px;
+    width: 25%;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 8px #222222);
+    background-color: #FFFFFF;
+}
+
+.infoCard img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.categoria.exp{
+    background-color: #222222;
+}
+
+.exp>h3{
+    color: #ffffff;
+}
+
+.cvTitol{
+    position: relative;
+    height: 240px;
+    padding: 20px 50px;
+    background-color: blue;
+}
+
+.cvTitol > div{
+    position: absolute;
+    top: 30%;
+}
+.cvTitol h1{
+    margin: 0px;
+}
+
+.cvProfilepic > img{
+    float:right;
+    max-height: 200px;
+}
+
+.cvIndex{
+    display: table;
+    margin: 0px auto;
+}
+
+.cvSeccio{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 50px 20px 50px;
+    border-bottom: 1px solid #000000;
+}
+
+.cvCategoria{
+    flex-grow: 1;
+}
+
+.cvCategoria > h2{
+    text-align: left;
+}
+
+.cvIdiomes{
+    flex-grow: 2;
+}
+
+.cvIdiomes table{
+    width: 100%;
+    border-radius: 1em;
     text-align: center;
-    padding: 20px 0px;
+}
+
+.cvIdiomes th{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+th:first-of-type {
+    border-top-left-radius: 10px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 10px;
+  }
+
+  tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+  }
+  tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+  }
+
+.cvIdiomes td{
+    background-color: #CCCCCC;
+}
+
+
+.cvSubtitol{
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
 }
 
 .contacte{
@@ -94,7 +250,7 @@ h2{
 }
 
 footer{
-    margin-top:50px;
+    margin-top:auto;
     background-color: #222222;
 }
 
