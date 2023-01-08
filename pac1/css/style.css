@@ -9,6 +9,17 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: Montserrat;
+    src: url("../assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face{
+    font-family: Montserrat;
+    src: url("../assets/fonts/Montserrat-Bold.ttf");
+    font-weight: bold;
+}
+
 *{
     box-sizing: border-box;
     font-family: Inter;
@@ -19,10 +30,11 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 16px;
 }
 
 .logo{
-    height: 50px;
+    height: 3.125rem;
     padding: 5px 10px;
 }
 
@@ -60,12 +72,14 @@ h2{
 }
 
 .headBanner{
+    display:flex;
+    align-items: center;
     position:relative;
+    height: 18rem;
     width: 100%;
 }
 
 .headBanner h1{
-    z-index: 100;
     width: 100%;
     position:absolute;
     text-align: center;
@@ -74,11 +88,17 @@ h2{
     text-shadow: 2px 2px #000000;
 }
 
-.headImg{
-    height: 300px;
+#headImgIndex{
+    background-image: url(../assets/img/main_header.jpg);
     width: 100%;
-    object-fit:cover;
-    object-position: 0% 40%;
+    height: 18rem;
+}
+
+#headImgContact{
+    background-image: url(../assets/img/contact_header.jpg);
+    width: 100%;
+    height: 18rem;
+    background-position: center;
 }
 
 .categoria{
@@ -97,22 +117,20 @@ h2{
     padding: 0px;
     gap:99px;
 }
-.filaCategoria>p{
-    width: 60%;
+
+#introPic img{
+    max-width: 100%;
 }
 
-#introPic{
-    background-image: url("../assets/img/foto_seccio_large.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-    height: 266px;
-    flex-grow: 2;
+.filaCategoria>p{
+    width: 60%;
 }
 
 .filaCategoria.cardRow{
     padding-left: 162;
     justify-content: center;
+    flex-wrap: wrap;
+    width: fi;
     gap: 48px;
 }
 
@@ -120,11 +138,11 @@ h2{
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 0px 24px;
-    gap:24px;
-    width: 25%;
+    padding: 0 0 1.5rem;
+    gap: 1.5rem;
     border: 1px solid #000000;
     border-radius: 20px;
+    flex: 0 1 20rem;
     filter: drop-shadow(0px 0px 8px #222222);
     background-color: #FFFFFF;
 }
@@ -135,32 +153,82 @@ h2{
     border-top-right-radius: 20px;
 }
 
+.infoCard p{
+    padding: 0 1.5rem
+}
+
+.infoCard button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
 .categoria.exp{
     background-color: #222222;
 }
 
 .exp>h3{
     color: #ffffff;
+    font-family: Montserrat;
 }
 
+.extra>.filaCategoria{
+    gap: 3rem;
+    justify-content: center;
+}
+
+.extra>h3{
+    font-family: Montserrat;
+    text-align: center;
+}
+
+.extra .filaCategoria{
+    width: fit-content;
+}
+
+.exp img{
+    max-width: 100%;
+}
+
+.hobby{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    padding: 1.75rem;
+    width: 21.25rem;
+}
+
+.hobby>h4{
+    font-family: Montserrat;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hobby img{
+    height: 3.125rem;
+    max-width: 100%;
+    min-width: 1.25rem;
+}
 .cvTitol{
-    position: relative;
-    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18rem;
     padding: 20px 50px;
-    background-color: blue;
+    background-image: url(../assets/img/cv_header.jpeg);
 }
 
-.cvTitol > div{
-    position: absolute;
-    top: 30%;
-}
 .cvTitol h1{
     margin: 0px;
+    color:#ffffff;
 }
 
 .cvProfilepic > img{
-    float:right;
-    max-height: 200px;
+    max-height: 15.225rem;
 }
 
 .cvIndex{
@@ -171,20 +239,30 @@ h2{
 .cvSeccio{
     display: flex;
     justify-content: space-evenly;
-    padding: 0px 50px 20px 50px;
+    flex-direction: row;
+    padding: 20px 50px 20px 50px;
     border-bottom: 1px solid #000000;
 }
 
 .cvCategoria{
-    flex-grow: 1;
+    width: 40vw;
 }
 
-.cvCategoria > h2{
+.cvCategoria h2{
     text-align: left;
 }
 
-.cvIdiomes{
-    flex-grow: 2;
+.cvDades{
+    background-color: #CCCCCC;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    width: 35vw;
+}
+
+.cvDades h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .cvIdiomes table{
@@ -221,6 +299,7 @@ th:first-of-type {
     text-align: left;
     padding: 0px;
     margin: 0px;
+    color: #ffffff;
 }
 
 .contacte{
@@ -243,8 +322,15 @@ th:first-of-type {
     width: 100%;
 }
 
+.submitArea{
+    display: flex;
+    justify-content: center;
+    margin:20px 0px;
+    
+}
 .contacte input[type=submit]{
     padding: 10px 20px;
+    border: none;
     background-color: #000000;
     color: #ffffff;
 }

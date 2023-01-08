@@ -23,9 +23,7 @@
         </nav>
         <div class="headBanner">
             <h1 id="titol">David's Portfolio</h1>
-            <picture>
-                <img src="assets/img/main_header.jpg" alt="Capçalera principal" class="headImg">
-            </picture>        
+            <div id="headImgIndex">
         </div>
     </header> 
 
@@ -33,10 +31,14 @@
         <article id="intro" class="categoria">
             <h2>Benvingut al meu portafoli personal</h2>
             <div class="filaCategoria">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet veritatis soluta aperiam doloribus quam ad, ducimus voluptatibus! Impedit ratione necessitatibus autem ad similique blanditiis pariatur alias aperiam exercitationem, sit nisi?
-                Eaque perferendis inventore saepe velit quibusdam enim mollitia, maxime officia repudiandae sit! Expedita fugit eveniet voluptates odio quo facere, fuga, quaerat fugiat perspiciatis autem reprehenderit consectetur repellat quod nulla modi.
-                Animi possimus nobis impedit nemo accusamus iure explicabo quidem ullam, ex nisi doloremque in voluptates similique unde omnis tempore. Eum rem tenetur vel ea modi voluptatum ipsa expedita recusandae corporis?</p>
-                <div id="introPic"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores libero incidunt omnis minus expedita eos est harum magni molestias veritatis adipisci sit consequatur debitis, iusto qui itaque veniam ipsam! Quas ex provident repellat, iure magnam unde eos quis doloremque. Omnis, quidem ratione voluptate soluta dolorum voluptatem porro asperiores quas rerum ex ipsam facilis. Eius quaerat incidunt totam nesciunt consequatur, mollitia iure culpa necessitatibus pariatur cupiditate porro odit magnam, accusamus architecto quod neque provident aliquid minus excepturi quas est illo, ex maxime atque! Cupiditate vel, consequuntur eum necessitatibus ipsam rerum provident, quasi doloribus dolores aspernatur officiis, sed excepturi enim! Laboriosam id officia vero ratione provident quidem necessitatibus corporis dolor, architecto at dolorem saepe a dolore ipsam recusandae sapiente, reprehenderit velit, facilis sunt aliquam ea blanditiis. Id, perferendis. Voluptates maxime non odit saepe error aspernatur qui? Ratione obcaecati dicta consectetur, nemo quaerat eligendi iure totam mollitia veritatis quisquam quod illo quos incidunt dolores provident voluptatibus rem corrupti. Eius dignissimos excepturi magni libero.  </p>
+                <div>
+                    <picture id="introPic"> 
+                        <source srcset="assets/img/foto_seccio_large.jpg" media="(min-width:1400px)" />
+                        <source srcset="assets/img/foto_seccio_mid.jpg" media="(min-width:600px)" />
+                       <img src="assets/img/foto_seccio_small.jpg" />
+                    </picture>
+                </div>
             </div>
         </article>
 
@@ -48,6 +50,7 @@
                         </picture>
                         <h3>Programador</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque assumenda ex vel perspiciatis incidunt provident eos non impedit nulla sunt architecto, nemo obcaecati temporibus, culpa fugiat natus quod saepe repellat?</p>
+                        <button type="button">Llegir més</button>
                     </div>
                     <div class="infoCard">
                         <picture>
@@ -55,6 +58,7 @@
                         </picture>
                         <h3>Técnic</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque assumenda ex vel perspiciatis incidunt provident eos non impedit nulla sunt architecto, nemo obcaecati temporibus, culpa fugiat natus quod saepe repellat?</p>
+                        <button type="button">Llegir més</button>
                     </div>
                     <div class="infoCard">
                         <picture>
@@ -62,6 +66,7 @@
                         </picture>
                         <h3>Disseny</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque assumenda ex vel perspiciatis incidunt provident eos non impedit nulla sunt architecto, nemo obcaecati temporibus, culpa fugiat natus quod saepe repellat?</p>
+                        <button type="button">Llegir més</button>
                     </div>
                 </div>
             </div>
@@ -71,57 +76,58 @@
             <h3>Experiència</h3>
             <div class="filaCategoria">
                 <div>
-                    <h4>HTML</h4>
                     <img src="assets/img/grafic_html.svg" alt="Nivell HTML">
                 </div>
                 <div>
-                    <h4>CSS</h4>
                     <img src="assets/img/grafic_css.svg" alt="Nivell CSS">
                 </div>
                 <div>
-                    <h4>JS</h4>
                     <img src="assets/img/grafic_js.svg" alt="Nivell JS">
                 </div>
             </div>
         </article>
 
-        <article class="categoria">
+        <article class="categoria extra">
             <h3>Aficions i informació adicional</h3>
-            <div class="hobby">
-                <h4>Ilustració i animació</h4>
-                <picture>
-                    <img src="assets/img/brush-outline.svg" alt="Imatge pinzell">
-                </picture>
+            <div class="filaCategoria">
+                <div class="hobby">
+                    <h4>Ilustració</h4>
+                    <picture>
+                        <img src="assets/img/brush-outline.svg" alt="Imatge pinzell">
+                    </picture>
+                </div>
+                <div class="hobby">
+                    <h4>Models 3D</h4>
+                    <picture>
+                        <img src="assets/img/desktop-outline.svg" alt="Imatge ordinador">
+                    </picture>
+                </div>
+                <div class="hobby">
+                    <h4>Videojocs</h4>
+                    <picture>
+                        <img src="assets/img/game-controller-outline.svg" alt="Imatge mando">
+                    </picture>
+                </div>
             </div>
-            <div class="hobby">
-                <h4>Models 3D</h4>
-                <picture>
-                    <img src="assets/img/desktop-outline.svg" alt="Imatge ordinador">
-                </picture>
-            </div>
-            <div class="hobby">
-                <h4>Videojocs</h4>
-                <picture>
-                    <img src="assets/img/game-controller-outline.svg" alt="Imatge mando">
-                </picture>
-            </div>
-            <div class="hobby">
-                <h4>Mascotes</h4>
-                <picture>
-                    <img src="assets/img/paw-outline.svg" alt="Imatge mando">
-                </picture>
-            </div>
-            <div class="hobby">
-                <h4>Idiomes</h4>
-                <picture>
-                    <img src="assets/img/language-outline.svg" alt="Imatge mando">
-                </picture>
-            </div>
-            <div class="hobby">
-                <h4>Gimnas</h4>
-                <picture>
-                    <img src="assets/img/barbell-outline.svg" alt="Imatge mando">
-                </picture>
+            <div class="filaCategoria">
+                <div class="hobby">
+                    <h4>Mascotes</h4>
+                    <picture>
+                        <img src="assets/img/paw-outline.svg" alt="Imatge mando">
+                    </picture>
+                </div>
+                <div class="hobby">
+                    <h4>Idiomes</h4>
+                    <picture>
+                        <img src="assets/img/language-outline.svg" alt="Imatge mando">
+                    </picture>
+                </div>
+                <div class="hobby">
+                    <h4>Gimnas</h4>
+                    <picture>
+                        <img src="assets/img/barbell-outline.svg" alt="Imatge mando">
+                    </picture>
+                </div>
             </div>
         </article>
 
