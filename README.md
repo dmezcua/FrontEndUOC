@@ -1,5 +1,5 @@
-# UOC Front End Web Developer Course#
-## Alumne / Student: David Mezcua Rigau##
+# UOC Front End Web Developer Course
+## Alumne / Student: David Mezcua Rigau
 
 ## Català
 Repositori de projectes del curs de desenvolupament web de la **Universitat Oberta de Catalunya (UOC)**,
