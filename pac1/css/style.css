@@ -31,22 +31,22 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .logo{
     height: 3.125rem;
-    padding: 5px 10px;
+    padding: 0.313rem 0.625rem;
 }
 
 h2{
     text-align: center;
-    padding: 20px 0px;
+    padding: 1.25rem 0px;
 }
 
 .navMenu{
     background-color: #222222;
-    height: 50px;
+    height: 3.125rem;
 }
 
 .navMenu  ul{
@@ -63,8 +63,8 @@ h2{
 .navMenu a {
     display: block;
     text-decoration: none;
-    height: 50px;
-    padding: 15px 16px;
+    height: 3.125rem;
+    padding: 0.938rem 1rem;
     color: #ffffff;
 }
 
@@ -86,7 +86,7 @@ h2{
     text-align: center;
     line-height: 180px;
     color: #ffffff;
-    text-shadow: 2px 2px #000000;
+    text-shadow: 0.125rem 0.125rem #000000;
 }
 
 #headImgIndex{
@@ -108,8 +108,8 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px 48px;
-    gap: 48px;
+    padding: 4rem 3rem;
+    gap: 3rem;
 }
 
 .filaCategoria{
@@ -118,7 +118,7 @@ h2{
     align-items: center;
     justify-content: space-between;
     padding: 0px;
-    gap:99px;
+    gap:6.188rem;
 }
 
 #introPic img{
@@ -133,7 +133,7 @@ h2{
     justify-content: center;
     flex-wrap: wrap;
     width: fi;
-    gap: 48px;
+    gap: 3rem;
 }
 
 .infoCard{
@@ -143,7 +143,7 @@ h2{
     padding: 0 0 1.5rem;
     gap: 1.5rem;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     flex: 0 1 20rem;
     filter: drop-shadow(0px 0px 8px #222222);
     background-color: #FFFFFF;
@@ -151,8 +151,8 @@ h2{
 
 .infoCard img{
     width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
 }
 
 .infoCard p{
@@ -160,7 +160,7 @@ h2{
 }
 
 .infoCard button{
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     border: none;
     background-color: #000000;
     color: #ffffff;
@@ -217,7 +217,7 @@ h2{
     align-items: center;
     justify-content: space-between;
     height: 18rem;
-    padding: 20px 50px;
+    padding: 1.25rem 3.125rem;
     background-image: url(../assets/img/cv_header.jpeg);
 }
 
@@ -240,7 +240,7 @@ h2{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    padding: 20px 50px 20px 50px;
+    padding: 1.25rem 3.125rem 1.25rem 3.125rem;
     border-bottom: 1px solid #000000;
 }
 
@@ -278,17 +278,17 @@ h2{
 }
 
 th:first-of-type {
-    border-top-left-radius: 10px;
+    border-top-left-radius: 0.625rem;
   }
   th:last-of-type {
-    border-top-right-radius: 10px;
+    border-top-right-radius: 0.625rem;
   }
 
   tr:last-of-type td:first-of-type {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 0.625rem;
   }
   tr:last-of-type td:last-of-type {
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 0.625rem;
   }
 
 .cvIdiomes td{
@@ -316,8 +316,8 @@ th:first-of-type {
 
 .contacte input[type=text]{
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
 }
 
 .contacte textarea{
@@ -327,11 +327,11 @@ th:first-of-type {
 .submitArea{
     display: flex;
     justify-content: center;
-    margin:20px 0px;
+    margin:1.25rem 0px;
     
 }
 .contacte input[type=submit]{
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     border: none;
     background-color: #000000;
     color: #ffffff;
@@ -346,8 +346,8 @@ footer{
 
 
 .socialIcon{
-    height: 50px;
-    padding: 10px;
+    height: 3.125rem;
+    padding: 0.625rem;
 }
 
 @media only screen and (max-width:800px){
@@ -383,7 +383,7 @@ footer{
     }
 
     .cvTitol{
-        padding: 20px 10px;
+        padding: 1.25rem 0.625rem;
     }
 
     .cvProfilepic > img{
