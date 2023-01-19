@@ -20,6 +20,12 @@
     font-weight: bold;
 }
 
+/* Quan es treballa amb fonts locals, 
+   és una bona pràctica definir la font-display, aquí podeu trobar més informació:
+   https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
+*/
+
+
 *{
     box-sizing: border-box;
     font-family: Inter;
