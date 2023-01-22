@@ -14,9 +14,9 @@ inputResolt = false;
 while(inputResolt == false){
     var num2 = prompt('Introdueix un segon número del 1 al 50');
     if(isNaN(num2)){
-        prompt('ERROR: El valor introduït no és un numero.');
+        alert('ERROR: El valor introduït no és un numero.');
     }else if(!rangValid(num2)){
-        prompt('ERROR: El numero introduït té que ser entre 1 i 50');
+        alert('ERROR: El numero introduït té que ser entre 1 i 50');
     }else{
         inputResolt = true;
     }
