@@ -1,0 +1,63 @@
+/*Navigation menu and header*/
+
+*{
+    box-sizing: border-box;
+}
+
+.navMenu{
+    background-color: red;
+}
+
+
+/*Main body. Deck and cards.*/
+body{
+    min-height: 100vh;
+    margin: 0;
+}
+
+.mainWrapper{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.deck{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.testCard{
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 125px;
+    height: 200px;
+    margin-right:20px;
+}
+
+.pkmnInfo{
+    background-color: blue;
+    width: 40%;
+}
+
+.pkmnStats{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.pkmnStat{
+    background-color: red;
+}
+
+/*Footer. Additional info. Media-queries*/
+
+footer{
+    display: flex;
+    margin-top: auto;
+    background-color: #aaaaaa;
+}
