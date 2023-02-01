@@ -1,7 +1,6 @@
-import { pokemon } from "./pokemon.js";
+import {getRandomPkmn } from "./pokemon.js";
 
-pokemon.fetchPkmn(6);
-console.log(pokemon.toString());
+
 
 /*const url = "https://pokeapi.co/api/v2/pokemon/";
 const id = 6;

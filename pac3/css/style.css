@@ -1,63 +1,164 @@
-/*Navigation menu and header*/
+ /*Font Faces*/
+ @font-face {
+     font-family: Roboto;
+     src: url('../assets/fonts/Roboto-Regular.ttf');
+ }
+ 
+ @font-face {
+     font-family: Roboto;
+     src: url('../assets/fonts/Roboto-Light.ttf');
+     font-weight: 300;
+ }
+
+ @font-face {
+     font-family: Roboto;
+     src: url('../assets/fonts/Roboto-LightItalic.ttf');
+     font-weight: 300;
+     font-style: italic;
+ }
+
+ @font-face {
+     font-family: Roboto;
+     src: url('../assets/fonts/Roboto-Black.ttf');
+     font-weight: 900;
+ }
 
 *{
     box-sizing: border-box;
+    padding:0;
+    margin:0;
 }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 2.5rem 1fr 2rem;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*Navigation menu and header*/
 
 .navMenu{
     background-color: red;
-}
-
-
-/*Main body. Deck and cards.*/
-body{
-    min-height: 100vh;
-    margin: 0;
-}
-
-.mainWrapper{
-    background-color: aqua;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.deck{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.testCard{
-    background-color: green;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 125px;
-    height: 200px;
-    margin-right:20px;
+    grid-column: 1 / 3;
 }
 
 .pkmnInfo{
+    background-color: green;
+}
+
+
+
+/*Deck and cards.*/
+.deck{
     background-color: blue;
-    width: 40%;
+    grid-column: 1 / 3;
 }
 
-.pkmnStats{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+/*Info Window Styles*/
+.info{
+    background-color: green;
+    display: none;
 }
 
-.pkmnStat{
-    background-color: red;
-}
+/*Pokemon type bacground colors*/
 
 /*Footer. Additional info. Media-queries*/
+.footer{
+    background-color: orange;
+    grid-column: 1 / 3;
+}
+.typeNormal{
+    background-color: #b8d494;
+    color: #000000;
+}
 
-footer{
-    display: flex;
-    margin-top: auto;
-    background-color: #aaaaaa;
+.typeGrass{
+    background-color: #44FF44;
+    color: #000000;
+}
+
+.typeFire{
+    background-color: #ff3300;
+    color: #FFFFFF;
+}
+
+.typeWater{
+    background-color: #4444FF;
+    color: #FFFFFF;
+}
+
+.typeFlying{
+    background-color: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    color: #000000;
+}
+
+.typeFighting{
+    background-color: #c24d22;
+    color: #FFFFFF;
+}
+
+.typePoison{
+    background-color: #550055;
+    color: #FFFFFF;
+}
+
+.typeElectric{
+    background-color: #AAAA00;
+    color: #000000;
+}
+
+.typeGround{
+    background-color: linear-gradient(180deg, #a0a061 50%, #69471d 50%);
+    color: #000000;
+}
+
+.typeRock{
+    background-color: #776b24;
+    color: #FFFFFF;
+}
+
+.typePsychic{
+    background-color: linear-gradient(180deg, #f329f3 50%, #631663 50%);
+    color: #FFFFFF;
+}
+
+.typeIce{
+    background-color: #69c2c2;
+    color: #000000;
+}
+
+.typeBug{
+    background-color: #96fa24;
+    color: #000000;
+}
+
+.typeGhost{
+    background-color: #aa00FF;
+    color: #FFFFFF;
+}
+
+.typeSteel{
+    background-color: linear-gradient(180deg, #999999 50%, #444444 50%);
+    color: #000000;
+}
+
+.typeDragon{
+    background-color: linear-gradient(180deg, #4e86ff 50%, #5d1566 50%);
+    color: #FFFFFF;
+}
+
+.typeDark{
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+.typeFairy{
+    background-color: #f798a8;
+    color: #000000;
 }
