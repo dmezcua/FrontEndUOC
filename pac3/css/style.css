@@ -57,9 +57,19 @@
 /*Deck and cards.*/
 .deck{
     background-color: blue;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     grid-column: 1 / 3;
 }
 
+.card{
+    background-color: white;
+}
+
+.pkmnImg{
+    max-width: 80%;
+}
 /*Info Window Styles*/
 .info{
     background-color: green;

@@ -1,7 +1,6 @@
 const knownPkmn = 1008;
 const apiURL = "https://pokeapi.co/api/v2/pokemon/";
 const artURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
-//const apiPkmnList = "https://pokeapi.co/api/v2/pokemon?limit=1008&offset=0";
 
 /*Note about Pokemon.artRoute: Unlike the spriteFront attribute, which takes the sprite's URL from the fetch(), 
 this one uses a more or less hardcoded solution to generate a URL to get the image, as the API creates problems
