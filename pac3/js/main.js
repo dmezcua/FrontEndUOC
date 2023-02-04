@@ -1,5 +1,7 @@
 import {fetchPkmn, getRandomPkmn} from "./pokemon.js";
 
+const maxPkmnFetch = 10;
+
 var params = new URLSearchParams(document.location.search);
 var pokeID = params.get("pokeID");
 var pokemonList = [];
@@ -20,7 +22,7 @@ var pkmnSpDef = document.getElementById('infoSpDef');
 var pkmnSpd = document.getElementById('infoSpd');
 var pkmnFront = document.querySelector('.infoFront');
 var pkmnBack = document.querySelector('.infoBack');
-
+var infoTyping= document.querySelector('.infoTyping');
 
 
 //Website main code
@@ -29,8 +31,7 @@ if(pokeID){
     pokemonList.push(pokemon);
     printPkmn(pokemon);
 } else {
-    //TO DO: Load getRandomPkmn(10) with cards
-    pokemonList = await getRandomPkmn(10)
+    pokemonList = await getRandomPkmn(maxPkmnFetch)
     for(let i = 0; i < pokemonList.length; i++) printPkmn(pokemonList[i]);
 }
 
@@ -60,6 +61,7 @@ function printPkmn(pokemon){
     for(let i = 0; i < pokemon.types.length; i++){
         let span = document.createElement("SPAN");
         span.innerHTML = pokemon.types[i];
+        span.classList.add('type');
         span.classList.add(`type${pokemon.types[i]}`);
         pkmnTyping.appendChild(span);
     }
@@ -68,7 +70,7 @@ function printPkmn(pokemon){
         let selectPkmn = pokemonList.find(x => x.id == pokemon.id);
         printInfo(selectPkmn);
         deck.style.gridColumn = '1 / 2';
-        info.style.display = 'block';
+        info.style.display = 'flex';
     })
 
     card.addEventListener('blur', function(){
@@ -83,7 +85,6 @@ function printPkmn(pokemon){
 function printInfo(pokemon){
     pkmnNumber.innerHTML = adjustPkmnNumber(pokemon.id);
     pkmnName.innerHTML = pokemon.name;
-    pkmnArt.setAttribute('src', pokemon.artRoute);
     pkmnWeight.innerHTML = pokemon.weight;
     pkmnHeight.innerHTML = pokemon.height;
     pkmnHP.innerHTML = pokemon.hp;
@@ -93,19 +94,52 @@ function printInfo(pokemon){
     pkmnSpDef.innerHTML = pokemon.spDefense;
     pkmnSpd.innerHTML = pokemon.speed;
 
-    if(pokemon.spriteFront){
-        pkmnFront.setAttribute('src', pokemon.spriteFront);
+    if(!pokemon.spriteFront && !pokemon.spriteBack){
+        pkmnArt.style.gridColumn = '1 / 3';
+        pkmnFront.style.display = 'none';
+        pkmnBack.style.display = 'none'
+    }else{
+        pkmnArt.style.gridColumn = '1 / 2';
+        if(pokemon.spriteFront){
+            pkmnFront.style.display = 'flex';
+            let img = document.createElement('IMG');
+            img.setAttribute('src', pokemon.spriteFront);
+            pkmnFront.appendChild(img);
+        } else{
+            pkmnFront.style.display = 'none';
+        }
+        if(pokemon.spriteBack){
+            pkmnBack.style.display = 'flex';
+            let img = document.createElement('IMG');
+            img.setAttribute('src', pokemon.spriteBack);
+            pkmnBack.appendChild(img);
+        }else{
+            pkmnBack.style.display = 'none';
+        }
     }
 
-    if(pokemon.spriteBack){
-        pkmnBack.setAttribute('src', pokemon.spriteBack);
+    let img = document.createElement('IMG');
+    img.setAttribute('src', pokemon.artRoute);
+    pkmnArt.appendChild(img);
+    
+    for(let i = 0; i < pokemon.types.length; i++){
+        let spanType = document.createElement("SPAN");
+        spanType.innerHTML = pokemon.types[i];
+        spanType.classList.add('type');
+        spanType.classList.add(`type${pokemon.types[i]}`);
+        infoTyping.appendChild(spanType);
+    }
+
+    for(let i =0; i < pokemon.abilities.length; i++){
+        let ability = document.createElement("li");
+        ability.innerHTML = pokemon.abilities[i];
+        pkmnAbilities.appendChild(ability);
     }
 }
 
 function clearInfo(){
     pkmnNumber.innerHTML = "";
     pkmnName.innerHTML = "";
-    pkmnArt.setAttribute('src', "");
     pkmnWeight.innerHTML = "";
     pkmnHeight.innerHTML = "";
     pkmnHP.innerHTML = "";
@@ -114,8 +148,26 @@ function clearInfo(){
     pkmnSpAtk.innerHTML = "";
     pkmnSpDef.innerHTML = "";
     pkmnSpd.innerHTML = "";
-    pkmnFront.setAttribute('src', "");
+    while(pkmnArt.firstChild){
+        pkmnArt.removeChild(pkmnArt.firstChild)
+    }
+
+    while(pkmnFront.firstChild){
+        pkmnFront.removeChild(pkmnFront.firstChild);
+    }
+
+    while(pkmnBack.firstChild){
+        pkmnBack.removeChild(pkmnBack.firstChild);
+    }
+
     pkmnBack.setAttribute('src', "");
+    while (infoTyping.firstChild) {
+        infoTyping.removeChild(infoTyping.firstChild);
+    }
+
+    while (pkmnAbilities.firstChild) {
+        pkmnAbilities.removeChild(pkmnAbilities.firstChild);
+    }
 }
 
 function adjustPkmnNumber(number){

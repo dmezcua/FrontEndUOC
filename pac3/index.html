@@ -18,6 +18,7 @@
                 Pokédex
             </picture>
             <div class="controls">
+                <label for="searchPkmn">Search:</label>
                 <input type="search" name="search" id="searchPkmn">
                 <label for="themeLight">Light</label>
                 <input type="radio" name="theme" id="themeLight" value="light">
@@ -30,8 +31,8 @@
 
         <template id="template">
             <article id="" class="card">
-                <img src="" class="pkmnImg">
                 <h4 class="pkmnNumber">#0001</h4>
+                <img src="" class="pkmnImg">
                 <h3 class="pkmnName">Bulbasaur</h3>
                 <div class="pkmnTyping">
                     
@@ -45,9 +46,15 @@
                 <h2 class="infoName">Name</h3>
             </div>
             <div class="infoImages">
-                <img src="" class="infoArt">
-                <img src="" class="infoFront">
-                <img src="" class="infoBack">
+                <div class="infoArt">
+
+                </div>
+                <div class="infoFront">
+
+                </div>
+                <div class="infoBack">
+                    
+                </div>
             </div>
             
             <div class="infoTyping">
@@ -56,41 +63,44 @@
 
             <div class="infoBio">
                 <div>
-                    <h3>Weight:</h3>
+                    <h3>Weight</h3>
                     <p id="infoWeight"></p>
                 </div>
                 <div>
-                    <h3>Height:</h3>
+                    <h3>Height</h3>
                     <p id="infoHeight"></p>
                 </div>
-                <div class="infoAbilities">
+                <div>
+                    <h3>Abilities</h3>
+                    <ul class="infoAbilities">
 
-                </div>
+                    </ul>
+                </div>    
             </div>
 
             <div class="infoStats">
                 <div>
-                    <h4>HP</h4>
+                    <h3>HP</h3>
                     <p id="infoHp"></p>
                 </div>
                 <div>
-                    <h4>Attack</h4>
+                    <h3>Attack</h3>
                     <p id="infoAtk"></p>
                 </div>
                 <div>
-                    <h4>Defense</h4>
+                    <h3>Defense</h3>
                     <p id="infoDef"></p>
                 </div>
                 <div>
-                    <h4>Special Attack</h4>
+                    <h3>Special Attack</h3>
                     <p id="infoSpAtk"></p>
                 </div>
                 <div>
-                    <h4>Special Defense</h4>
+                    <h3>Special Defense</h3>
                     <p id="infoSpDef"></p>
                 </div>
                 <div>
-                    <h4>Speed</h4>
+                    <h3>Speed</h3>
                     <p id="infoSpd"></p>
                 </div>
             </div>

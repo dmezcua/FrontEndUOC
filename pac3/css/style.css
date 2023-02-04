@@ -23,20 +23,35 @@
      font-weight: 900;
  }
 
+ /*General settings and Body*/
+
 *{
     box-sizing: border-box;
     padding:0;
     margin:0;
+    font-family: Roboto;
 }
 
+body{
+    background-image: url('../assets/img/light_bg.jpg');
+    background-size: contain;
+}
 .grid-container{
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 5fr 2.5fr;
     grid-template-rows: 2.5rem 1fr 2rem;
     width: 100vw;
     height: 100vh;
 }
 
+h3{
+    font-weight: 500;
+}
+
+h4{
+    font-weight: 100;
+    font-style: italic;
+}
 /*Navigation menu and header*/
 
 .navMenu{
@@ -56,24 +71,135 @@
 
 /*Deck and cards.*/
 .deck{
-    background-color: blue;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
     grid-column: 1 / 3;
+    gap: 1rem;
+    overflow: auto;
 }
 
 .card{
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CCCCCC;
+    width: 10em;
+    height: 14em;
+    text-align: center;
+    border: 0.1em solid black;
+    border-radius: 5%;
+    box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.616);
 }
 
 .pkmnImg{
-    max-width: 80%;
+    max-width: 70%;
+    max-height: 50%;
+    background-color: #FFFFFF;
+    padding: 0.25rem;
+    margin: 0.5rem 0;
+    border-radius: 10%;
+}
+
+.pkmnTyping{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 /*Info Window Styles*/
 .info{
-    background-color: green;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(176,176,176,1) 100%); 
     display: none;
+    flex-direction: column;
+}
+
+.info h3{
+    font-weight: 600;
+    font-size:1rem;
+}
+
+.info h4{
+    font-size: 1.5rem;
+}
+
+.infoHeader{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 1em;
+}
+
+.infoImages{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
+
+.infoImages div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoImages p{
+    text-align: center;
+}
+
+.infoArt {
+    grid-row: 1 / 3;
+    align-items: center;
+}
+
+.infoArt img{
+    max-width: 100%;
+    max-height: 20em;
+}
+
+.infoFront{
+    background-color: #BBBBBB;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+}
+
+.infoBack{
+    background-color: #BBBBBB;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+}
+
+.infoBio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.infoBio div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoTyping{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+
+.infoStats{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 /*Pokemon type bacground colors*/
@@ -83,6 +209,21 @@
     background-color: orange;
     grid-column: 1 / 3;
 }
+
+/*Typing styles*/
+.type{
+    width: 40%;
+    font-size: 0.75rem;
+    padding: 0.1rem 0rem;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+
+.infoTyping .type{
+    font-size: 1rem;
+    padding: 0.25rem 0rem;
+}
+
 .typeNormal{
     background-color: #b8d494;
     color: #000000;
@@ -104,7 +245,9 @@
 }
 
 .typeFlying{
-    background-color: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background-color: #3dc7ef;
+  
     color: #000000;
 }
 
@@ -124,7 +267,8 @@
 }
 
 .typeGround{
-    background-color: linear-gradient(180deg, #a0a061 50%, #69471d 50%);
+    background: linear-gradient(180deg, #a0a061 50%, #69471d 50%);
+    background-color: #69471d;
     color: #000000;
 }
 
@@ -134,7 +278,8 @@
 }
 
 .typePsychic{
-    background-color: linear-gradient(180deg, #f329f3 50%, #631663 50%);
+    background: linear-gradient(180deg, #f329f3 50%, #631663  50%);
+    background-color: #631663;
     color: #FFFFFF;
 }
 
@@ -154,12 +299,13 @@
 }
 
 .typeSteel{
-    background-color: linear-gradient(180deg, #999999 50%, #444444 50%);
+    background: linear-gradient(180deg, #999999 50%, #444444 50%);
     color: #000000;
 }
 
 .typeDragon{
-    background-color: linear-gradient(180deg, #4e86ff 50%, #5d1566 50%);
+    background: linear-gradient(180deg, #4e86ff 50%, #5d1566 50%);
+    background-color: #4e86ff ;
     color: #FFFFFF;
 }
 

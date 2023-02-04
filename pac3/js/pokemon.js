@@ -84,7 +84,12 @@ function convertTypes(typesJson){
 function convertAbilities(abilitiesJson){
     let abilities =[];
     for(let i = 0; i < abilitiesJson.length; i++){
-        abilities.push(capitalize((abilitiesJson[i].ability.name)).replace("-"," "));
+        if(abilitiesJson[i].is_hidden){
+            abilities.push(capitalize((abilitiesJson[i].ability.name)).replace("-"," ") + " (Hidden)");
+
+        } else {
+            abilities.push(capitalize((abilitiesJson[i].ability.name)).replace("-"," "));
+        }
     }
 
     return abilities;
