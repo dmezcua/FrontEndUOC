@@ -1,4 +1,4 @@
-import {fetchPkmn, getRandomPkmn} from "./pokemon.js";
+import {fetchPkmn, getRandomPkmn, filterPkmn} from "./pokemon.js";
 
 const maxPkmnFetch = 10;
 
@@ -7,6 +7,8 @@ var pokeID = params.get("pokeID");
 var pokemonList = [];
 var info = document.querySelector('.info');
 var deck = document.querySelector('#deck');
+var searchbar = document.getElementById('searchPkmn');
+var themeSwitch = document.querySelectorAll('input[name="themeMode"');
 
 var pkmnName = document.querySelector('.infoName');
 var pkmnNumber = document.querySelector('.infoNumber');
@@ -34,6 +36,27 @@ if(pokeID){
     pokemonList = await getRandomPkmn(maxPkmnFetch)
     for(let i = 0; i < pokemonList.length; i++) printPkmn(pokemonList[i]);
 }
+
+searchbar.addEventListener('input', function(){
+    let filteredList = filterPkmn(pokemonList, searchbar.value);
+    while(deck.lastChild){
+        deck.removeChild(deck.lastChild);
+    }
+    for(let i = 0; i< filteredList.length; i++) {
+        printPkmn(filteredList[i]);
+    }
+})
+
+themeSwitch.forEach(x => {
+    x.addEventListener('change', function(){
+        if(this.value == 'dark'){
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }else{
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    })
+})
+
 
 
 //Functions
@@ -148,25 +171,25 @@ function clearInfo(){
     pkmnSpAtk.innerHTML = "";
     pkmnSpDef.innerHTML = "";
     pkmnSpd.innerHTML = "";
-    while(pkmnArt.firstChild){
-        pkmnArt.removeChild(pkmnArt.firstChild)
+    while(pkmnArt.lastChild){
+        pkmnArt.removeChild(pkmnArt.lastChild)
     }
 
-    while(pkmnFront.firstChild){
-        pkmnFront.removeChild(pkmnFront.firstChild);
+    while(pkmnFront.lastChild){
+        pkmnFront.removeChild(pkmnFront.lastChild);
     }
 
-    while(pkmnBack.firstChild){
-        pkmnBack.removeChild(pkmnBack.firstChild);
+    while(pkmnBack.lastChild){
+        pkmnBack.removeChild(pkmnBack.lastChild);
     }
 
     pkmnBack.setAttribute('src', "");
-    while (infoTyping.firstChild) {
-        infoTyping.removeChild(infoTyping.firstChild);
+    while (infoTyping.lastChild) {
+        infoTyping.removeChild(infoTyping.lastChild);
     }
 
-    while (pkmnAbilities.firstChild) {
-        pkmnAbilities.removeChild(pkmnAbilities.firstChild);
+    while (pkmnAbilities.lastChild) {
+        pkmnAbilities.removeChild(pkmnAbilities.lastChild);
     }
 }
 

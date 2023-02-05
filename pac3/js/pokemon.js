@@ -55,6 +55,21 @@ async function getRandomPkmn(max){
     return randomPkmn;
 }
 
+/*Note: String.prototype.startsWith() could be used here to ensure that the names match with the
+input by the beginning. I've decided to make use of String.prototye.includes() instead
+because I thought it would make searches easier and more flexible.*/
+function filterPkmn(pkmnList, input){
+    let matchedPkmn = [];
+
+    for(let i = 0; i < pkmnList.length; i++){
+        if(pkmnList[i].name.toLowerCase().includes(input.toLowerCase())){
+            matchedPkmn.push(pkmnList[i]);
+        }
+    }
+
+    return matchedPkmn;
+}
+
 function getRandomIdexes(maxIndex){
     let indexList = [];
     let rndmNum;
@@ -99,4 +114,4 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-export {fetchPkmn, getRandomPkmn};
+export {fetchPkmn, getRandomPkmn, filterPkmn};
