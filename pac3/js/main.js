@@ -1,6 +1,7 @@
 import {fetchPkmn, getRandomPkmn, filterPkmn} from "./pokemon.js";
 
 const maxPkmnFetch = 10;
+let themeStatus = window.localStorage.getItem('theme');
 
 var params = new URLSearchParams(document.location.search);
 var pokeID = params.get("pokeID");
@@ -26,6 +27,8 @@ var pkmnFront = document.querySelector('.infoFront');
 var pkmnBack = document.querySelector('.infoBack');
 var infoTyping= document.querySelector('.infoTyping');
 
+if(themeStatus) document.documentElement.setAttribute('data-theme', themeStatus);
+updateRadio(themeStatus);
 
 //Website main code
 if(pokeID){
@@ -54,6 +57,8 @@ themeSwitch.forEach(x => {
         }else{
             document.documentElement.setAttribute('data-theme', 'light');
         }
+
+        window.localStorage.setItem('theme', this.value);
     })
 })
 
@@ -108,8 +113,8 @@ function printPkmn(pokemon){
 function printInfo(pokemon){
     pkmnNumber.innerHTML = adjustPkmnNumber(pokemon.id);
     pkmnName.innerHTML = pokemon.name;
-    pkmnWeight.innerHTML = pokemon.weight;
-    pkmnHeight.innerHTML = pokemon.height;
+    pkmnWeight.innerHTML = pokemon.weight + "kg";
+    pkmnHeight.innerHTML = pokemon.height + "m";
     pkmnHP.innerHTML = pokemon.hp;
     pkmnAtk.innerHTML = pokemon.attack;
     pkmnDef.innerHTML = pokemon.defense;
@@ -196,4 +201,17 @@ function clearInfo(){
 function adjustPkmnNumber(number){
     let pokemonNum = '#' + number.toString().padStart(4,'0');
     return pokemonNum;
+}
+
+function updateRadio(value){
+    if(value == 'light'){
+        document.getElementById('themeLight').checked = true;
+        document.getElementById('themeDark').checked = false;
+    }else if (value == 'dark'){
+        document.getElementById('themeLight').checked = false;
+        document.getElementById('themeDark').checked = true;
+    }else{
+        document.getElementById('themeLight').checked = true;
+        document.getElementById('themeDark').checked = false;
+    }
 }

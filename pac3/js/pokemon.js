@@ -18,8 +18,8 @@ class Pokemon{
             this.artRoute = "";
             this.types = [];
             this.abilities = [];
-            this.height = height;
-            this.weight = weight;
+            this.height = height / 10;
+            this.weight = weight / 10;
             this.hp = hp;
             this.attack = attack;
             this.defense = defense;
@@ -56,7 +56,7 @@ async function getRandomPkmn(max){
 }
 
 /*Note: String.prototype.startsWith() could be used here to ensure that the names match with the
-input by the beginning. I've decided to make use of String.prototye.includes() instead
+input by the beginning of the string. I've decided to make use of String.prototye.includes() instead
 because I thought it would make searches easier and more flexible.*/
 function filterPkmn(pkmnList, input){
     let matchedPkmn = [];
