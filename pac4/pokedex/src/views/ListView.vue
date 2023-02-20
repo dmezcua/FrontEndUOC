@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="listview">
+    <h1>This is the list of Pokemon</h1>
   </div>
 </template>
 
