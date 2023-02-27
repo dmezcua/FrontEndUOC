@@ -1,14 +1,19 @@
 <script setup>
     const props = defineProps(['data'])
-    console.log("Rendering " + props.data.name + " card");
 </script>
 
 <template>
     <article class="card" @click="$router.push({ name: 'info', params: { pkmnID: props.data.id } })">
-        <h2>{{ props.data.name }}</h2>
-        <h4>#{{ props.data.id }}</h4>
-        <h3>Typing:</h3>
-        <p>{{ props.data.type }}</p>
+        <div class="title">
+          <h4>{{ props.data.number}}</h4>
+          <h3>{{ props.data.name }}</h3>
+        </div>
+        <img :src="props.data.spriteFront" alt="">
+        <div class="typing">
+            <span v-for="type in props.data.types">
+                {{ type }}
+            </span>
+        </div>
     </article>
 </template>
 
@@ -20,8 +25,13 @@
         border-radius: 5%;
         overflow: hidden;
         box-shadow: 0 0 5px 5px #eeeeee;
-        width: 150px;
-        height: 225px;
+        width: 125px;
+        height: 175px;
         cursor: pointer;
+    }
+
+    img{
+        width:75px;
+        height: 75px;
     }
 </style>
