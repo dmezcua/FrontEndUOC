@@ -4,6 +4,7 @@
 
 <template>
     <article class="card" @click="$router.push({ name: 'info', params: { pkmnID: props.data.id } })">
+        
         <div class="title">
           <h4>{{ props.data.number}}</h4>
           <h3>{{ props.data.name }}</h3>

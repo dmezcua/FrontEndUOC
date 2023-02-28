@@ -1,3 +1,12 @@
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  if(window.localStorage.getItem('pkmns')){
+    window.localStorage.removeItem('pkmns');
+  }
+})
+</script>
 
 <template>
   <main class="home">

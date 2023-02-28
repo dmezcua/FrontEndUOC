@@ -66,6 +66,9 @@ function adjustPkmnNumber(number) {
 </script>
 
 <template>
+  <button @click="$router.push({name:'list'})">
+    Go back
+  </button>
   <div class="info">
     <div class="intro">
       <section class="header">
@@ -237,6 +240,12 @@ function adjustPkmnNumber(number) {
     align-items: center;
     background-color: #555555;
     border-radius: 15px;
+  }
+
+  button{
+    padding: 0.20rem 0.75rem;
+    width: 5rem;
+    margin: 1rem 0rem 0rem 2rem;
   }
 }
 </style>

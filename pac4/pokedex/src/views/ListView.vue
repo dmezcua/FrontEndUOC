@@ -9,7 +9,12 @@ const pkmnList = ref([]);
 const search = ref("");
 
 onMounted(() => {
-  fetchRandomPkmn(defaultMaxPkmn.value);
+  if(!window.localStorage.getItem('pkmns')){
+    fetchRandomPkmn(defaultMaxPkmn.value);
+  }else{
+    pkmnList.value = JSON.parse(window.localStorage.getItem('pkmns'));
+  }
+  
 })
 
 const filteredPkmn = computed(()=>{
@@ -30,6 +35,9 @@ function fetchPokemon(id){
       spriteFront: response.data.sprites.front_default
     }
     pkmnList.value.push(pokemon);
+    if(pkmnList.value.length == defaultMaxPkmn.value){
+      window.localStorage.setItem('pkmns', JSON.stringify(pkmnList.value));
+    }
   });
 }
 
