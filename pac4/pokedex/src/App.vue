@@ -3,7 +3,11 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import {ref} from 'vue'
 
-const themeMode =ref('dark')
+const themeMode =ref(window.localStorage.getItem('theme'))
+
+const saveData = (e) =>{
+  window.localStorage.setItem('theme', e.target.value)
+}
 </script>
 
 <template>
@@ -19,9 +23,9 @@ const themeMode =ref('dark')
             <RouterLink to="/list">List</RouterLink>
             <div class="settings">
               <label for="dark">Dark:</label>
-              <input type="radio" name="theme" id="dark" value="dark" v-model="themeMode">
+              <input type="radio" name="theme" id="dark" value="dark" v-model="themeMode" @change="saveData" checked>
               <label for="light">Light:</label>
-              <input type="radio" name="theme" id="light" value ="light" v-model="themeMode" >
+              <input type="radio" name="theme" id="light" value ="light" v-model="themeMode" @change="saveData">
             </div>
         </nav>
       </div>
@@ -84,7 +88,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  font-weight: 900;
 }
 
 nav a.router-link-exact-active:hover {
@@ -95,10 +99,15 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+  color: var(--text-color);
 }
 
 nav a:first-of-type {
   border: 0;
+}
+
+nav a:hover{
+  background-color: #AAAAAA;
 }
 
 @media (min-width: 1024px) {
