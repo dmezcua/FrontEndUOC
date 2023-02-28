@@ -75,7 +75,7 @@ function adjustPkmnNumber(number){
       <img :src=pokemon.spriteBack alt="">
     </section>
     <section class="typing">
-      <span v-for="type in pokemon.types">
+      <span v-for="type in pokemon.types" :class="type">
         {{ type }}
       </span>
     </section>
@@ -129,11 +129,11 @@ function adjustPkmnNumber(number){
 <style scoped>
 @media (min-width: 1024px) {
   .info {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .header{

@@ -78,24 +78,33 @@ function adjustPkmnNumber(number){
 
 <template>
   <section>
-    <input v-model="search" type="text" placeholder="Search a Pokémon">
-    {{ search }}
+    <article class="submenu">
+      <input v-model="search" type="text" placeholder="Search a Pokémon">
+    </article>
   </section>
   <section class="list">
     <h2 v-if="pkmnList.length == 0">No cards match your search criteria :(</h2>
     <PkmnCard v-for="pkmn in filteredPkmn" :v-key="pkmn.id" :data="pkmn"/>
-
   </section>
 </template>
 
 <style>
 @media (min-width: 1024px) {
   .list {
-    width: 90vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center ;
     flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 20%;
+  }
+
+  .submenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
   }
 }
 </style>
